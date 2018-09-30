@@ -1,0 +1,127 @@
+@import url("https://fonts.googleapis.com/css?family=Quicksand:400,700");
+body {
+  background: #eaeaea;
+  font-family: 'Quicksand', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+body nav {
+  background: #034c73;
+  color: #eaeaea;
+  padding: 1em;
+  position: relative;
+}
+
+body nav::after {
+  content: '';
+  clear: both;
+  display: block;
+}
+
+body .logo {
+  float: left;
+  font-size: 1rem;
+  margin: 0;
+  width: 40px;
+  height: 40px;
+}
+
+body .site-nav {
+  position: relative;
+  top: 100%;
+  right: 0;
+  width: 100%;
+  background: #034c73;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: none;
+}
+
+body .site-nav li {
+  border-bottom: 1px solid #eaeaea;
+}
+
+body .site-nav li:last-child {
+  border-bottom: none;
+}
+
+body .site-nav a {
+  color: #eaeaea;
+  padding: 1em;
+  display: block;
+  text-transform: uppercase;
+  text-decoration: none;
+  text-align: center;
+}
+
+body .site-nav a:hover,
+body .site-nav .active {
+  background: #6D90a2;
+  color: #454545;
+}
+
+body .site-nav .dropdown-content {
+  display: none;
+}
+
+body .site-nav .dropdown-content .dropdown-item {
+  border-top: 1px solid #eaeaea;
+}
+
+body .site-nav--icon {
+  display: inline-block;
+  font-size: 1.5em;
+  margin-right: 1em;
+  width: 1.1em;
+  text-align: right;
+  color: rgba(255, 255, 255, 0.4);
+}
+
+body .menu-toggle {
+  padding: 1em;
+  position: absolute;
+  top: .5em;
+  right: .5em;
+  cursor: pointer;
+}
+
+body .hamburger,
+body .hamburger::before,
+body .hamburger::after {
+  content: '';
+  display: block;
+  background: #eaeaea;
+  height: 3px;
+  width: 1.75em;
+  border-radius: 3px;
+  -webkit-transition: all ease-in-out 500ms;
+  transition: all ease-in-out 500ms;
+}
+
+body .hamburger::before {
+  -webkit-transform: translateY(-6px);
+          transform: translateY(-6px);
+}
+
+body .hamburger::after {
+  -webkit-transform: translateY(3px);
+          transform: translateY(3px);
+}
+
+body .open .hamburger {
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+
+body .open .hamburger::before {
+  opacity: 0;
+}
+
+body .open .hamburger::after {
+  -webkit-transform: translateY(-3px) rotate(-90deg);
+          transform: translateY(-3px) rotate(-90deg);
+}
+/*# sourceMappingURL=main.css.map */

@@ -1,0 +1,154 @@
+@import url('https://fonts.googleapis.com/css?family=Quicksand:400,700');
+
+$colors: (
+  t3-blue: #034c73,
+  light-blue: #6D90a2,
+  light-grey: #eaeaea,
+  light-gold: #d9b97e,
+  gold: #bf861b,
+  dark-grey: #343434,
+  accent-grey: #454545,
+);
+
+@function color($color-name) {
+  @return map-get($colors, $color-name)
+}
+
+$tablet: 400px;
+$desktop: 800px;
+
+@mixin tablet {
+  @media (min-width: #{$tablet}) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width: #{$desktops}) {
+    @content;
+  }
+}
+
+body {
+  background: color(light-grey);
+  font-family: 'Quicksand', sans-serif;
+  margin: 0;
+  padding: 0;
+
+  nav {
+    background:  color(t3-blue);
+    color: color(light-grey);
+    padding: 1em;
+    position: relative;
+  }
+
+  nav::after {
+    content: '';
+    clear: both;
+    display: block;
+  }
+
+  .logo {
+    float: left;
+    font-size: 1rem;
+    margin: 0;
+    width: 40px;
+    height: 40px;
+  }
+
+  .site-nav {
+    position: relative;
+    top: 100%;
+    right: 0;
+    width: 100%;
+    background: color(t3-blue);
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: none;
+
+
+    li {
+      border-bottom: 1px solid color(light-grey);
+    }
+
+    li:last-child{
+      border-bottom: none;
+    }
+
+    a {
+      color: color(light-grey);
+      padding: 1em;
+      display: block;
+      text-transform: uppercase;
+      text-decoration: none;
+      text-align: center;
+    }
+
+    a:hover,
+    .active {
+      background: color(light-blue);
+      color: color(accent-grey);
+    }
+
+    .dropdown-content{
+      display: none;
+      
+      .dropdown-item{
+        border-top: 1px solid color(light-grey);
+      }
+
+    }
+
+  }
+
+  .site-nav--icon {
+    display: inline-block;
+    font-size: 1.5em;
+    margin-right: 1em;
+    width: 1.1em;
+    text-align: right;
+    color: rgba(255,255,255,.4);
+  }
+
+  .menu-toggle {
+    padding: 1em;
+    position: absolute;
+    top: .5em;
+    right: .5em;
+    cursor: pointer;
+  }
+
+  .hamburger,
+  .hamburger::before,
+  .hamburger::after {
+    content: '';
+    display: block;
+    background: color(light-grey);
+    height: 3px;
+    width: 1.75em;
+    border-radius: 3px;
+    transition: all ease-in-out 500ms;
+  }
+
+  .hamburger::before {
+    transform: translateY(-6px);
+  }
+
+  .hamburger::after {
+    transform: translateY(3px);
+  }
+
+  .open .hamburger {
+    transform: rotate(45deg)
+  }
+
+  .open .hamburger::before {
+    opacity: 0;
+  }
+
+  .open .hamburger::after {
+    transform: translateY(-3px) rotate(-90deg)
+  }
+}
